@@ -1,0 +1,34 @@
+# 1
+
+
+n, m = map(int, input().split())
+
+card = list(map(int, input().split()))
+
+result = 0
+
+for i in range(n):
+    for j in range(i+1, n):
+        for k in range(j+1, n):
+            if card[i] + card[j] + card[k] > m:
+                continue
+            else:
+                result = max(result, card[i]+card[j]+card[k])
+
+print(result)
+
+
+#2
+
+
+n = int(input())
+result = 0
+
+for i in range(1, n+1):
+    a = list(map(int, str(i)))
+    s = i + sum(a)
+    if (s == n):
+        result = i
+        break
+
+print(result)
